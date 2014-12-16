@@ -8,8 +8,9 @@
 -- automatically added
 
 -- IPs we use
-local main_ipv4 = '5.9.213.220'
-local main_ipv6 = '2a01:4f8:162:13e1::220'
+local www_ipv4 = '5.9.213.222'
+local www_ipv6 = '2a01:4f8:162:13e1::222'
+local proxy_ipv4 = '5.9.213.220'
 -- MXs
 local mx0_ipv4  = '5.9.135.244'
 local mx0_ipv6  = '2a01:4f8:162:13e1::244'
@@ -18,10 +19,10 @@ local mx0_ipv6  = '2a01:4f8:162:13e1::244'
 local ttl = 28800
 
 -- A/AAAA records
-a_and_aaaa (_a, main_ipv4, main_ipv6, ttl)
-a_and_aaaa ("www", main_ipv4, main_ipv6, ttl)
-a ("proxy", main_ipv4, ttl)
-a ("*", main_ipv4, ttl)
+a_and_aaaa (_a, www_ipv4, www_ipv6, ttl)
+a_and_aaaa ("www", www_ipv4, www_ipv6, ttl)
+a ("proxy", proxy_ipv4, ttl)
+a ("*", www_ipv4, ttl)
 --
 a_and_aaaa ("mail", mx0_ipv4, mx0_ipv6, ttl)
 
