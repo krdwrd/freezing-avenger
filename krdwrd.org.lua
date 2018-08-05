@@ -12,8 +12,8 @@ local www_ipv4 = '5.9.213.222'
 local www_ipv6 = '2a01:4f8:162:13e1::222'
 local proxy_ipv4 = '5.9.213.220'
 -- MXs
-local mx0_ipv4  = '5.9.135.244'
-local mx0_ipv6  = '2a01:4f8:162:13e1::244'
+local mx0_ipv4  = '95.216.59.139'
+local mx0_ipv6  = '2a01:4f9:2a:122c::139'
 
 -- Standard TTL
 local ttl = 28800
