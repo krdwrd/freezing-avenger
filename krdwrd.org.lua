@@ -16,7 +16,8 @@ local mx0_ipv4  = '95.216.59.139'
 local mx0_ipv6  = '2a01:4f9:2a:122c::139'
 
 -- Standard TTL
-local ttl = 28800
+-- 600, 3600, 28800
+local ttl = 600
 
 -- A/AAAA records
 a_and_aaaa (_a, www_ipv4, www_ipv6, ttl)
@@ -25,6 +26,8 @@ a ("proxy", proxy_ipv4, ttl)
 a ("*", www_ipv4, ttl)
 --
 a_and_aaaa ("mail", mx0_ipv4, mx0_ipv6, ttl)
+a_and_aaaa ("autodiscover", mx0_ipv4, mx0_ipv6, ttl)
+a_and_aaaa ("autoconfig", mx0_ipv4, mx0_ipv6, ttl)
 
 -- MX records
 mx (_a, "mail.krdwrd.org", 10, ttl)
