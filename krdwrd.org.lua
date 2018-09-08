@@ -28,7 +28,6 @@ a ("*", www_ipv4, ttl)
 a_and_aaaa ("mail", mx0_ipv4, mx0_ipv6, ttl)
 a_and_aaaa ("autodiscover", mx0_ipv4, mx0_ipv6, ttl)
 a_and_aaaa ("autoconfig", mx0_ipv4, mx0_ipv6, ttl)
-a_and_aaaa ("autoconfig", mx0_ipv4, mx0_ipv6, ttl)
 
 -- MX records
 -- -- @name      = relative name
