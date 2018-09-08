@@ -28,6 +28,26 @@ a ("*", www_ipv4, ttl)
 a_and_aaaa ("mail", mx0_ipv4, mx0_ipv6, ttl)
 a_and_aaaa ("autodiscover", mx0_ipv4, mx0_ipv6, ttl)
 a_and_aaaa ("autoconfig", mx0_ipv4, mx0_ipv6, ttl)
+a_and_aaaa ("autoconfig", mx0_ipv4, mx0_ipv6, ttl)
 
 -- MX records
+-- -- @name      = relative name
+-- -- @exchanger = mail exchanger(fqdn)
+-- -- @prio      = priority (default: 0)
+-- -- @ttl       = TTL (default: user default TTL)
+-- mx(name, exchanger, prio, ttl)
 mx (_a, "mail.krdwrd.org", 10, ttl)
+
+-- SRV records
+-- -- @name    = relative name
+-- -- @target  = host name(fqdn)
+-- -- @port    = port number
+-- -- @prio    = prio (default: 0)
+-- -- @weight  = weight (default: 0)
+-- -- @ttl     = TTL (default: user default TTL)
+-- srv(name, target, port, prio, weight, ttl)
+srv("_autodiscover._tcp", "autodiscover", 443)
+srv("_imaps._tcp", "autodiscover", 993)
+srv("_submission._tcp", "autodiscover", 587)
+srv("_caldavs._tcp", "autodiscover", 443)
+srv("_carddavs._tcp", "autodiscover", 443)
