@@ -55,6 +55,6 @@ srv("_carddavs._tcp", "autodiscover.krdwrd.org", 443)
 -- -- @name    = relative name
 -- -- @text    = text
 -- -- @ttl     = TTL (default: user default TTL)
-txt("_dmarc", "v=DMARC1; p=quarantine; rua=mailto:postmaster@iiegn.de; ruf=mailto:postmaster@iiegn.de; fo=0; adkim=r; aspf=r; rf=afrf; sp=none"
-txt("@", "v=spf1 include:iiegn.eu ~all")
+txt("_dmarc", "v=DMARC1; p=quarantine; rua=mailto:postmaster@iiegn.de; ruf=mailto:postmaster@iiegn.de; fo=0; adkim=r; aspf=r; rf=afrf; sp=none")
+txt(_a, "v=spf1 include:iiegn.eu ~all")
 txt("theta._domainkey", "v=DKIM1;k=rsa;t=s;s=email;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDiJhJExGQfZdd0adcvtywdOLFNq3E+3/wnbHKDIw/VhMmm4ViKyUZDtDgVTj/qhAvtDEw55JEYgvG66BH3Mg0JOOUMnjU+f32VgbpMoo78JCCPjYF59hKEauCi1ICT7oPvQC88bu+yVxoB88UlKIsd3hneEWaLym8qGhbS9RDubQIDAQAB")
