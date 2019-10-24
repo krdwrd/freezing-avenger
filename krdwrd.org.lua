@@ -13,9 +13,10 @@ local www1_ipv4 = '185.199.109.153'
 local www2_ipv4 = '185.199.110.153'
 local www3_ipv4 = '185.199.111.153'
 
-local www0_ipv6 = '2a04:4e42::200:403'
-local www1_ipv6 = '2a04:4e42::400:403'
-local www2_ipv6 = '2a04:4e42::600:403'
+-- local www0_ipv6 = '2a04:4e42::200:403'
+-- local www1_ipv6 = '2a04:4e42::400:403'
+-- local www2_ipv6 = '2a04:4e42::600:403'
+-- a_and_aaaa (_a, www0_ipv4, www0_ipv6, ttl)
 
 -- MXs
 local mx0_ipv4  = '95.216.59.139'
@@ -26,11 +27,11 @@ local mx0_ipv6  = '2a01:4f9:2a:122c::139'
 local ttl = 600
 
 -- A/AAAA records
-a_and_aaaa (_a, www0_ipv4, www0_ipv6, ttl)
-a_and_aaaa (_a, www1_ipv4, www1_ipv6, ttl)
-a_and_aaaa (_a, www2_ipv4, www2_ipv6, ttl)
+a (_a, www0_ipv4, ttl)
+a (_a, www1_ipv4, ttl)
+a (_a, www2_ipv4, ttl)
 a (_a, www3_ipv4, ttl)
-a_and_aaaa ("www", www0_ipv4, www0_ipv6, ttl)
+a ("www", www0_ipv4, ttl)
 --
 a_and_aaaa ("mail", mx0_ipv4, mx0_ipv6, ttl)
 
