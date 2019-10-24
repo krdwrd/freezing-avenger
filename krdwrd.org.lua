@@ -8,9 +8,15 @@
 -- automatically added
 
 -- IPs we use
-local www_ipv4 = '5.9.213.222'
-local www_ipv6 = '2a01:4f8:162:13e1::222'
-local proxy_ipv4 = '5.9.213.220'
+local www0_ipv4 = '185.199.108.153'
+local www1_ipv4 = '185.199.109.153'
+local www2_ipv4 = '185.199.110.153'
+local www3_ipv4 = '185.199.111.153'
+
+local www0_ipv6 = '2a04:4e42::200:403'
+local www1_ipv6 = '2a04:4e42::400:403'
+local www2_ipv6 = '2a04:4e42::600:403'
+
 -- MXs
 local mx0_ipv4  = '95.216.59.139'
 local mx0_ipv6  = '2a01:4f9:2a:122c::139'
@@ -20,14 +26,13 @@ local mx0_ipv6  = '2a01:4f9:2a:122c::139'
 local ttl = 600
 
 -- A/AAAA records
-a_and_aaaa (_a, www_ipv4, www_ipv6, ttl)
-a_and_aaaa ("www", www_ipv4, www_ipv6, ttl)
-a ("proxy", proxy_ipv4, ttl)
-a ("*", www_ipv4, ttl)
+a_and_aaaa (_a, www0_ipv4, www0_ipv6, ttl)
+a_and_aaaa (_a, www1_ipv4, www1_ipv6, ttl)
+a_and_aaaa (_a, www2_ipv4, www2_ipv6, ttl)
+a (_a, www3_ipv4, ttl)
+a_and_aaaa ("www", www0_ipv4, www0_ipv6, ttl)
 --
 a_and_aaaa ("mail", mx0_ipv4, mx0_ipv6, ttl)
-a_and_aaaa ("autodiscover", mx0_ipv4, mx0_ipv6, ttl)
-a_and_aaaa ("autoconfig", mx0_ipv4, mx0_ipv6, ttl)
 
 -- MX records
 -- -- @name      = relative name
@@ -36,20 +41,6 @@ a_and_aaaa ("autoconfig", mx0_ipv4, mx0_ipv6, ttl)
 -- -- @ttl       = TTL (default: user default TTL)
 -- mx(name, exchanger, prio, ttl)
 mx (_a, "mail.krdwrd.org", 10, ttl)
-
--- SRV records
--- -- @name    = relative name
--- -- @target  = host name(fqdn)
--- -- @port    = port number
--- -- @prio    = prio (default: 0)
--- -- @weight  = weight (default: 0)
--- -- @ttl     = TTL (default: user default TTL)
--- srv(name, target, port, prio, weight, ttl)
-srv("_autodiscover._tcp", "autodiscover.krdwrd.org", 443)
-srv("_imaps._tcp", "autodiscover.krdwrd.org", 993)
-srv("_submission._tcp", "autodiscover.krdwrd.org", 587)
-srv("_caldavs._tcp", "autodiscover.krdwrd.org", 443)
-srv("_carddavs._tcp", "autodiscover.krdwrd.org", 443)
 
 -- TXT records
 -- -- @name    = relative name
